@@ -21,7 +21,7 @@ def solver(t0, tf, x0, v0, n, fuerza):
     paso_tiempo = parametros["paso_tiempo"] 
 
     for i in range(1, n + 1):
-        velocidad[i] = velocidad[i - 1] + paso_tiempo * fuerza(desplazamiento, i)
+        velocidad[i] = velocidad[i - 1] + paso_tiempo * fuerza(desplazamiento, velocidad, i)
         desplazamiento[i] = desplazamiento[i - 1] + paso_tiempo * velocidad[i]
     
     return tiempo, velocidad, desplazamiento
